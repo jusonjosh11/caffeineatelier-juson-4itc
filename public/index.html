@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffeine Atelier - Premium Coffee Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Prevent modal flash before React/CSS loads -->
+    <style>
+      .modal{display:none}
+      .modal[aria-hidden="false"]{display:grid}
+      .success-animation{display:none}
+      .success-animation.show{display:flex}
+    </style>
+    <script>
+      (function(){
+        try{
+          var saved = localStorage.getItem('theme');
+          var isDark = saved ? saved === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) document.documentElement.classList.add('pre-dark');
+        }catch(e){}
+      })();
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

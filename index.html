@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Caffeine Atelier - Premium Coffee Experience</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&d
+isplay=swap" rel="stylesheet" />
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<div class="nav-logo">
+<i class="fas fa-coffee"></i>
+<span>Caffeine Atelier</span>
+</div>
+<ul class="nav-links">
+<li><a href="#home" class="nav-link">Home</a></li>
+<li><a href="#coffee" class="nav-link">Coffee</a></li>
+<li><a href="#menu" class="nav-link">Menu</a></li>
+<li><a href="#about" class="nav-link">About</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+<a class="btn btn-primary nav-order" href="#order-modal" data-open-modal="order-modal" onclick="openModalById &&
+openModalById('order-modal')">Order Now</a>
+<div class="nav-toggle" id="nav-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="hero" id="home">
+<div class="hero-background">
+<div class="hero-particles" id="hero-particles"></div>
+<div class="hero-shapes">
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-3"></div>
+<div class="shape shape-4"></div>
+</div>
+<div class="hero-grid-overlay"></div>
+</div>
+<div class="hero-content">
+<div class="hero-text">
+<div class="hero-badge">
+<span class="badge-icon">☕</span>
+<span class="badge-text">Premium Coffee Experience</span>
+</div>
+<h1 class="hero-title">
+
+<span class="title-line title-main">Artisanal Coffee</span>
+<span class="title-line title-highlight">Crafted with</span>
+<span class="title-line title-accent">Passion</span>
+</h1>
+<p class="hero-subtitle">Discover the perfect blend of tradition and innovation in every cup. Experience coffee that tells a
+story.</p>
+<div class="hero-features">
+<div class="hero-feature">
+<div class="feature-dot"></div>
+<span>Single-Origin Beans</span>
+</div>
+<div class="hero-feature">
+<div class="feature-dot"></div>
+<span>Expert Baristas</span>
+</div>
+<div class="hero-feature">
+<div class="feature-dot"></div>
+<span>Fresh Daily</span>
+</div>
+</div>
+<div class="hero-buttons">
+<a href="#coffee" class="btn btn-primary">
+<span class="btn-text">Explore Coffee</span>
+<span class="btn-icon">→</span>
+</a>
+<a href="#menu" class="btn btn-secondary">
+<span class="btn-text">View Menu</span>
+<span class="btn-icon">☕</span>
+</a>
+<button class="btn btn-outline" onclick="openModalById('feedback-contact-modal')">
+<span class="btn-text">Share Feedback</span>
+<span class="btn-icon">💬</span>
+</button>
+<button class="btn btn-outline" onclick="openModalById('reservation-contact-modal')">
+<span class="btn-text">Reserve Table</span>
+<span class="btn-icon">📅</span>
+</button>
+</div>
+<div class="hero-stats">
+<div class="stat-item">
+<span class="stat-number">15+</span>
+<span class="stat-label">Years</span>
+</div>
+<div class="stat-divider"></div>
+<div class="stat-item">
+<span class="stat-number">50+</span>
+<span class="stat-label">Varieties</span>
+</div>
+<div class="stat-divider"></div>
+<div class="stat-item">
+<span class="stat-number">1000+</span>
+<span class="stat-label">Customers</span>
+</div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-visual-container">
+<div class="coffee-scene">
+<div class="coffee-cup-main">
+<div class="cup-body">
+<div class="cup-rim"></div>
+<div class="cup-content">
+<div class="coffee-surface"></div>
+<div class="coffee-foam"></div>
+
+</div>
+<div class="cup-handle"></div>
+</div>
+<div class="steam-group">
+<div class="steam steam-1"></div>
+<div class="steam steam-2"></div>
+<div class="steam steam-3"></div>
+<div class="steam steam-4"></div>
+</div>
+</div>
+<div class="coffee-beans">
+<div class="bean bean-1"></div>
+<div class="bean bean-2"></div>
+<div class="bean bean-3"></div>
+<div class="bean bean-4"></div>
+<div class="bean bean-5"></div>
+</div>
+<div class="floating-elements">
+<div class="floating-card rating-card">
+<div class="card-header">
+<i class="fas fa-star"></i>
+<span>4.9</span>
+</div>
+<div class="card-body">
+<span class="rating-text">Customer Rating</span>
+</div>
+</div>
+<div class="floating-card quality-card">
+<div class="card-icon">🏆</div>
+<div class="card-text">Premium Quality</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-scroll-indicator">
+<div class="scroll-text">Scroll to explore</div>
+<div class="scroll-arrow">
+<div class="arrow-line"></div>
+<div class="arrow-line"></div>
+</div>
+</div>
+</header>
+<!-- Coffee Categories Section -->
+<section class="coffee-categories" id="coffee">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Our Coffee Collection</h2>
+<p class="section-subtitle">From single-origin beans to signature blends</p>
+</div>
+<div class="categories-grid">
+<div class="category-card" data-category="espresso">
+<div class="category-icon">
+<i class="fas fa-fire"></i>
+</div>
+<h3>Espresso</h3>
+<p>Bold, intense, and pure coffee essence</p>
+<div class="category-overlay">
+<span>View Selection</span>
+</div>
+</div>
+<div class="category-card" data-category="filter">
+<div class="category-icon">
+<i class="fas fa-filter"></i>
+
+</div>
+<h3>Filter Coffee</h3>
+<p>Smooth, clean, and perfectly balanced</p>
+<div class="category-overlay">
+<span>View Selection</span>
+</div>
+</div>
+<div class="category-card" data-category="milk">
+<div class="category-icon">
+<i class="fas fa-mug-hot"></i>
+</div>
+<h3>Milk-Based</h3>
+<p>Creamy, indulgent, and comforting</p>
+<div class="category-overlay">
+<span>View Selection</span>
+</div>
+</div>
+<div class="category-card" data-category="specialty">
+<div class="category-icon">
+<i class="fas fa-star"></i>
+</div>
+<h3>Specialty</h3>
+<p>Unique flavors and innovative combinations</p>
+<div class="category-overlay">
+<span>View Selection</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="features">
+<div class="container">
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-seedling"></i>
+</div>
+<h3>Premium Beans</h3>
+<p>Ethically sourced from sustainable farms worldwide</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-shipping-fast"></i>
+</div>
+<h3>Fast Delivery</h3>
+<p>Fresh coffee delivered to your doorstep</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-user-tie"></i>
+</div>
+<h3>Expert Baristas</h3>
+<p>Masterfully crafted by coffee professionals</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="menu" id="menu">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Signature Menu</h2>
+<p class="section-subtitle">Curated selection of our finest offerings</p>
+</div>
+
+<div class="menu-tabs">
+<button class="tab-btn active" data-tab="espresso">Espresso</button>
+<button class="tab-btn" data-tab="filter">Filter</button>
+<button class="tab-btn" data-tab="milk">Milk-Based</button>
+<button class="tab-btn" data-tab="specialty">Specialty</button>
+</div>
+<div class="menu-content">
+<!-- Espresso Tab -->
+<div class="tab-content active" id="espresso-tab">
+<div class="menu-grid">
+<div class="menu-item">
+<div class="menu-image">
+
+<img src="https://vinut.com.vn/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/12/how-to-make-a-
+macchiato-the-classic-way-6572e3d759e13.jpeg.webp"
+
+alt="Classic Espresso" />
+<div class="menu-overlay">
+<span class="price">₱180</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Classic Espresso</h3>
+<p>Rich, bold, and perfectly balanced single shot</p>
+<div class="menu-tags">
+<span class="tag">Strong</span>
+<span class="tag">Bold</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src= "https://blogstudio.s3.theshoppad.net/coffeeheroau/10897ed60052f2aa1a495aa1c02a8ce6.jpg"
+alt="Double Ristretto" />
+<div class="menu-overlay">
+<span class="price">₱220</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Double Ristretto</h3>
+<p>Concentrated flavor with intense aroma</p>
+<div class="menu-tags">
+<span class="tag">Intense</span>
+<span class="tag">Aromatic</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=800&q=80"
+alt="Lungo" />
+<div class="menu-overlay">
+<span class="price">₱200</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Lungo</h3>
+<p>Extended extraction for a milder taste</p>
+<div class="menu-tags">
+<span class="tag">Mild</span>
+<span class="tag">Smooth</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter Tab -->
+
+<div class="tab-content" id="filter-tab">
+<div class="menu-grid">
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://burnoutmugs.com/wp-content/uploads/2024/09/4.1-1024x682.jpg"
+alt="Pour Over Coffee" />
+<div class="menu-overlay">
+<span class="price">₱250</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Pour Over</h3>
+<p>Hand-crafted single-cup brewing method for the perfect extraction</p>
+<div class="menu-tags">
+<span class="tag">Artisanal</span>
+<span class="tag">Clean</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
+alt="French Press Coffee" />
+<div class="menu-overlay">
+<span class="price">₱280</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>French Press</h3>
+<p>Full-bodied coffee with rich oils and bold flavor profile</p>
+<div class="menu-tags">
+<span class="tag">Full-bodied</span>
+<span class="tag">Rich</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80"
+alt="AeroPress Coffee" />
+<div class="menu-overlay">
+<span class="price">₱300</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>AeroPress</h3>
+<p>Clean, smooth, and versatile brewing with precision control</p>
+<div class="menu-tags">
+<span class="tag">Clean</span>
+<span class="tag">Smooth</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Milk-Based Tab -->
+<div class="tab-content" id="milk-tab">
+<div class="menu-grid">
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+alt="Cappuccino" />
+<div class="menu-overlay">
+<span class="price">₱320</span>
+</div>
+
+</div>
+<div class="menu-details">
+<h3>Cappuccino</h3>
+<p>Perfect balance of espresso, steamed milk, and velvety foam</p>
+<div class="menu-tags">
+<span class="tag">Balanced</span>
+<span class="tag">Creamy</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://cornercoffeestore.com/wp-content/uploads/2020/01/how-to-make-a-latte-at-home.jpg"
+alt="Latte" />
+<div class="menu-overlay">
+<span class="price">₱350</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Latte</h3>
+<p>Smooth espresso with velvety steamed milk and microfoam</p>
+<div class="menu-tags">
+<span class="tag">Smooth</span>
+<span class="tag">Velvety</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.arla.com/recordid/8763AA65-2EDD-4328-
+80C50FD4BB9B9EFE/picture.jpg?width=1200&height=630&mode=crop&format=jpg"
+alt="Flat White" />
+<div class="menu-overlay">
+<span class="price">₱380</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Flat White</h3>
+<p>Strong espresso with silky microfoam milk for intense flavor</p>
+<div class="menu-tags">
+<span class="tag">Strong</span>
+<span class="tag">Microfoam</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Specialty Tab -->
+<div class="tab-content" id="specialty-tab">
+<div class="menu-grid">
+<div class="menu-item">
+<div class="menu-image">
+<img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=800&q=80"
+alt="Caramel Macchiato" />
+<div class="menu-overlay">
+<span class="price">₱420</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Caramel Macchiato</h3>
+<p>Sweet caramel drizzle layered over rich espresso and steamed milk</p>
+<div class="menu-tags">
+<span class="tag">Sweet</span>
+<span class="tag">Caramel</span>
+</div>
+
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+
+<img src="https://www.thespruceeats.com/thmb/POPhcPYBWx7fNJu8Bc7YjS-
+Flso=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-mocha-4797918-hero-01-1-f8fb7ebd74914895b61366f6fc1d4b05.jpg"
+
+alt="Mocha" />
+<div class="menu-overlay">
+<span class="price">₱450</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Mocha</h3>
+<p>Rich chocolate with premium espresso and velvety milk</p>
+<div class="menu-tags">
+<span class="tag">Chocolate</span>
+<span class="tag">Rich</span>
+</div>
+</div>
+</div>
+<div class="menu-item">
+<div class="menu-image">
+
+<img src="https://cdn11.bigcommerce.com/s-
+5ljyj9oebs/products/6025/images/27336/P072023205410_1__56263.1709562034.386.513.jpg?c=2"
+
+alt="Vanilla Latte" />
+<div class="menu-overlay">
+<span class="price">₱400</span>
+</div>
+</div>
+<div class="menu-details">
+<h3>Vanilla Latte</h3>
+<p>Smooth vanilla with perfectly balanced espresso and milk</p>
+<div class="menu-tags">
+<span class="tag">Vanilla</span>
+<span class="tag">Smooth</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="about" id="about">
+<div class="container">
+<div class="about-content">
+<div class="about-text">
+<div class="about-header">
+<span class="about-badge">Our Story</span>
+<h2 class="section-title">Crafting Coffee Excellence Since 2010</h2>
+<div class="about-divider"></div>
+</div>
+<div class="about-description">
+<p class="about-lead">Founded with a passion for exceptional coffee, Caffeine Atelier brings together the finest beans from
+around the world. Our expert baristas craft each cup with precision, ensuring every sip delivers an unforgettable experience.</p>
+<div class="about-features">
+<div class="about-feature">
+<div class="feature-icon-small">
+<i class="fas fa-leaf"></i>
+</div>
+<div class="feature-text">
+<h4>Ethically Sourced</h4>
+<p>We partner with sustainable farms that prioritize environmental responsibility</p>
+</div>
+
+</div>
+<div class="about-feature">
+<div class="feature-icon-small">
+<i class="fas fa-award"></i>
+</div>
+<div class="feature-text">
+<h4>Award Winning</h4>
+<p>Recognized for excellence in coffee craftsmanship and service</p>
+</div>
+</div>
+<div class="about-feature">
+<div class="feature-icon-small">
+<i class="fas fa-heart"></i>
+</div>
+<div class="feature-text">
+<h4>Made with Love</h4>
+<p>Every cup is crafted with passion and attention to detail</p>
+</div>
+</div>
+</div>
+</div>
+<div class="about-stats">
+<div class="stat">
+<div class="stat-circle">
+<span class="stat-number">15+</span>
+</div>
+<span class="stat-label">Years Experience</span>
+</div>
+<div class="stat">
+<div class="stat-circle">
+<span class="stat-number">50+</span>
+</div>
+<span class="stat-label">Coffee Varieties</span>
+</div>
+<div class="stat">
+<div class="stat-circle">
+<span class="stat-number">1000+</span>
+</div>
+<span class="stat-label">Happy Customers</span>
+</div>
+</div>
+<div class="about-cta">
+<a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+<a href="#contact" class="btn btn-outline">Get in Touch</a>
+<button class="btn btn-secondary" onclick="openModalById('feedback-contact-modal')">Share Feedback</button>
+<button class="btn btn-secondary" onclick="openModalById('reservation-contact-modal')">Reserve Table</button>
+</div>
+</div>
+<div class="about-visual">
+<div class="about-image-container">
+<div class="about-image-main">
+<img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
+alt="Coffee Roasting" />
+</div>
+<div class="about-image-overlay">
+<div class="overlay-content">
+<i class="fas fa-coffee"></i>
+<span>Premium Quality</span>
+</div>
+</div>
+<div class="about-image-floating">
+<div class="floating-card">
+<i class="fas fa-star"></i>
+<span>4.9/5</span>
+<small>Customer Rating</small>
+
+</div>
+</div>
+</div>
+<div class="about-gallery">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80"
+alt="Coffee Beans" />
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80"
+alt="Coffee Cup" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Get in Touch</h2>
+<p class="section-subtitle">We'd love to hear from you</p>
+</div>
+<div class="contact-content">
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<h3>Location</h3>
+<p>#500 Caffeine Atelier, Cabuyao City, Laguna</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h3>Phone</h3>
+<p>+63 9813035763</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<div>
+<h3>Email</h3>
+<p>contact@caffeineatelier.com</p>
+</div>
+</div>
+</div>
+<form class="contact-form">
+<div class="form-group">
+<input type="text" placeholder="Your Name" required />
+</div>
+<div class="form-group">
+<input type="email" placeholder="Your Email" required />
+</div>
+<div class="form-group">
+<textarea placeholder="Your Message" rows="5" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Send Message</button>
+<button type="button" class="btn btn-secondary" onclick="openModalById('feedback-contact-modal')">Share
+Feedback</button>
+<button type="button" class="btn btn-secondary" onclick="openModalById('reservation-contact-modal')">Reserve
+Table</button>
+</form>
+</div>
+
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Caffeine Atelier</h3>
+<p>Elevating your coffee experience with every cup</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#coffee">Coffee</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><button class="footer-feedback-btn" onclick="openModalById('feedback-contact-modal')">💬 Share
+Feedback</button></li>
+<li><button class="footer-feedback-btn" onclick="openModalById('reservation-contact-modal')">📅 Reserve
+Table</button></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<p>📍 Cabuyao City, Laguna</p>
+<p>📞 +63 9813035763</p>
+<p>✉️ contact@caffeineatelier.com</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Caffeine Atelier. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script src="index.js"></script>
+<script src="debug_main_form.js"></script>
+<!-- Debug Console -->
+<div id="debug-console" style="position: fixed; top: 10px; right: 10px; width: 400px; height: 300px; background: #f8f9fa; border: 1px solid
+#ccc; padding: 10px; overflow-y: auto; font-family: monospace; font-size: 12px; z-index: 9999; display: none;">
+<div style="background: #007bff; color: white; padding: 5px; margin: -10px -10px 10px -10px;">
+<strong>Debug Console</strong>
+<button onclick="document.getElementById('debug-console').style.display='none'" style="float: right; background: #dc3545; color:
+white; border: none; padding: 2px 5px;">×</button>
+</div>
+</div>
+<script>
+// Show debug console on F12
+document.addEventListener('keydown', function(e) {
+if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+const debugConsole = document.getElementById('debug-console');
+debugConsole.style.display = debugConsole.style.display === 'none' ? 'block' : 'none';
+}
+});
+</script>
+
+<!-- Order Modal -->
+<div id="order-modal" class="modal" aria-hidden="true">
+<div class="modal-backdrop"></div>
+<div class="modal-card">
+<div class="modal-header">
+<h2>Place Your Order</h2>
+<button class="modal-close" data-close aria-label="Close modal">×</button>
+</div>
+<div class="modal-content">
+<form id="order-form" action="javascript:void(0);" method="post" onsubmit="return false;">
+<div class="form-grid">
+<div class="form-group">
+<label for="customerName">Customer Name *</label>
+<input type="text" id="customerName" name="customerName" required>
+<div class="error" id="nameError"></div>
+</div>
+<div class="form-group">
+<label for="contactInfo">Contact Number / Email *</label>
+<input type="text" id="contactInfo" name="contactInfo" required>
+<div class="error" id="contactError"></div>
+</div>
+<div class="form-group">
+<label for="coffeeSelection">Coffee Selection *</label>
+<select id="coffeeSelection" name="coffeeSelection" required>
+<option value="">Choose your coffee</option>
+<option value="latte">Latte</option>
+<option value="cappuccino">Cappuccino</option>
+<option value="espresso">Espresso</option>
+<option value="americano">Americano</option>
+<option value="mocha">Mocha</option>
+<option value="macchiato">Macchiato</option>
+<option value="flat-white">Flat White</option>
+<option value="cold-brew">Cold Brew</option>
+</select>
+<div class="error" id="coffeeSelectionError"></div>
+</div>
+<div class="form-group">
+<label>Coffee Size *</label>
+<div class="options">
+<label class="option">
+<input type="radio" name="size" value="small" required>
+<span class="option-text">Small</span>
+</label>
+<label class="option">
+<input type="radio" name="size" value="medium" required>
+<span class="option-text">Medium</span>
+</label>
+<label class="option">
+<input type="radio" name="size" value="large" required>
+<span class="option-text">Large</span>
+</label>
+</div>
+</div>
+<div class="form-group">
+<label>Add-ons</label>
+<div class="options addons-grid">
+<label class="option">
+<input type="checkbox" name="addons" value="extra-shot">
+<span class="option-text">Extra Shot</span>
+</label>
+
+<label class="option">
+<input type="checkbox" name="addons" value="whipped-cream">
+<span class="option-text">Whipped Cream</span>
+</label>
+<label class="option">
+<input type="checkbox" name="addons" value="almond-milk">
+<span class="option-text">Almond Milk</span>
+</label>
+<label class="option">
+<input type="checkbox" name="addons" value="oat-milk">
+<span class="option-text">Oat Milk</span>
+</label>
+<label class="option">
+<input type="checkbox" name="addons" value="vanilla-syrup">
+<span class="option-text">Vanilla Syrup</span>
+</label>
+<label class="option">
+<input type="checkbox" name="addons" value="caramel-syrup">
+<span class="option-text">Caramel Syrup</span>
+</label>
+</div>
+</div>
+<div class="form-group">
+<label for="quantity">Quantity *</label>
+<input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+<div class="error" id="quantityError"></div>
+</div>
+<div class="form-group full-width">
+<label for="specialInstructions">Special Instructions</label>
+<textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special requests or
+modifications..."></textarea>
+<div class="counter">
+<span id="wordCount">0</span> words
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<div class="order-summary" id="orderSummary">
+<h4>Order Summary</h4>
+<div class="summary-content">
+<p>Select your coffee to see pricing</p>
+</div>
+<div class="total-price">
+<strong>Total: $<span id="totalPrice">0.00</span></strong>
+</div>
+</div>
+<div class="form-actions">
+<div class="order-status" id="orderStatus"></div>
+<div class="button-group">
+<button type="button" id="orderCancel" class="btn btn-secondary" data-close>Cancel</button>
+<button type="button" id="saveFavorite" class="btn btn-outline">Save Favorite</button>
+<button type="submit" form="order-form" class="btn btn-primary" id="submitOrderBtn">
+<span class="btn-text">Submit Order</span>
+<span class="btn-loading">
+<div class="loading-spinner"></div>
+<span>Processing Order...</span>
+</span>
+<span class="btn-success">
+<span>✓</span>
+<span>Order Sent Successfully!</span>
+
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Success Animation Modal -->
+<div class="success-animation" id="successAnimation">
+<div class="success-content">
+<div class="success-icon">🎉</div>
+<h3 class="success-title">Order Confirmed!</h3>
+<p class="success-message">Your coffee order has been successfully placed. We'll start brewing it right away!</p>
+<button class="success-button" onclick="closeSuccessAnimation()">Back to Menu</button>
+</div>
+</div>
+
+<!-- Reservation Modal -->
+<div class="modal" id="reservation-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card">
+<button class="modal-close" data-close>×</button>
+<h3>Reserve a Table</h3>
+<form id="reservation-form" novalidate>
+<div class="form-grid">
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="resName" required />
+<small class="error" data-error-for="resName"></small>
+</div>
+<div class="form-group">
+<label>Contact Number</label>
+<input type="tel" id="resContact" required />
+<small class="error" data-error-for="resContact"></small>
+</div>
+<div class="form-group">
+<label>Date</label>
+<input type="date" id="resDate" required />
+<small class="error" data-error-for="resDate"></small>
+</div>
+<div class="form-group">
+<label>Time</label>
+<input type="time" id="resTime" required />
+<small class="error" data-error-for="resTime"></small>
+</div>
+<div class="form-group">
+<label>Number of Guests</label>
+<input type="number" id="resGuests" min="1" max="12" value="2" required />
+<small class="error" data-error-for="resGuests"></small>
+</div>
+</div>
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Confirm Reservation</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Feedback Modal -->
+<div class="modal" id="feedback-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card">
+<button class="modal-close" data-close>×</button>
+
+<h3>Send Feedback</h3>
+<form id="feedback-form" novalidate>
+<div class="form-grid">
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="fbName" required />
+<small class="error" data-error-for="fbName"></small>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="fbEmail" required />
+<small class="error" data-error-for="fbEmail"></small>
+</div>
+<div class="form-group">
+<label>Feedback Type</label>
+<select id="fbType" required>
+<option value="" disabled selected>Select type</option>
+<option>Complaint</option>
+<option>Suggestion</option>
+<option>Praise</option>
+</select>
+<small class="error" data-error-for="fbType"></small>
+</div>
+<div class="form-group span-2">
+<label>Message</label>
+<textarea id="fbMessage" rows="4" maxlength="300" required></textarea>
+<div class="counter"><span id="fbCount">0</span>/300</div>
+<small class="error" data-error-for="fbMessage"></small>
+</div>
+</div>
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Send</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Loyalty Modal -->
+<div class="modal" id="loyalty-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card">
+<button class="modal-close" data-close>×</button>
+<h3>Join Loyalty</h3>
+<form id="loyalty-form" novalidate>
+<div class="form-grid">
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" id="loyName" required />
+<small class="error" data-error-for="loyName"></small>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="loyEmail" required />
+<small class="error" data-error-for="loyEmail"></small>
+</div>
+<div class="form-group">
+<label>Birthday</label>
+<input type="date" id="loyBirthday" required />
+<small class="hint" id="birthdayPerk">Enter your birthday to see your perk 🎉</small>
+<small class="error" data-error-for="loyBirthday"></small>
+</div>
+<div class="form-group">
+<label class="checkbox">
+<input type="checkbox" id="loyNewsletter" /> Subscribe to newsletter
+</label>
+</div>
+
+</div>
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Join Now</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Professional Feedback/Contact Form Modal -->
+<div class="modal feedback-modal" id="feedback-contact-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card feedback-card">
+<div class="modal-header feedback-header">
+<div class="header-content">
+<div class="header-icon">💬</div>
+<h3>Share Your Feedback</h3>
+<p>We'd love to hear from you! Your feedback helps us improve.</p>
+</div>
+<button class="modal-close" data-close aria-label="Close modal">×</button>
+</div>
+<form id="feedback-contact-form" class="feedback-form" novalidate>
+<div class="form-grid feedback-grid">
+<div class="form-group">
+<label for="feedbackName">
+<span class="label-text">Full Name</span>
+<span class="required">*</span>
+</label>
+<input type="text" id="feedbackName" name="feedbackName" required />
+<div class="error-message" id="feedbackNameError"></div>
+</div>
+<div class="form-group">
+<label for="feedbackEmail">
+<span class="label-text">Email Address</span>
+<span class="required">*</span>
+</label>
+<input type="email" id="feedbackEmail" name="feedbackEmail" required />
+<div class="error-message" id="feedbackEmailError"></div>
+</div>
+<div class="form-group">
+<label for="feedbackType">
+<span class="label-text">Feedback Type</span>
+<span class="required">*</span>
+</label>
+<select id="feedbackType" name="feedbackType" required>
+<option value="" disabled selected>Choose feedback type</option>
+<option value="complaint">📝 Complaint</option>
+<option value="suggestion">💡 Suggestion</option>
+<option value="praise">🌟 Praise</option>
+</select>
+<div class="error-message" id="feedbackTypeError"></div>
+</div>
+<div class="form-group full-width">
+<label for="feedbackMessage">
+<span class="label-text">Your Message</span>
+<span class="required">*</span>
+</label>
+<textarea
+id="feedbackMessage"
+name="feedbackMessage"
+rows="5"
+maxlength="500"
+
+placeholder="Share your thoughts, suggestions, or concerns with us..."
+required
+></textarea>
+<div class="message-counter">
+<span class="counter-text">
+<span id="feedbackWordCount">0</span> words
+</span>
+<span class="counter-limit">
+<span id="feedbackCharCount">0</span>/500 characters
+</span>
+</div>
+<div class="error-message" id="feedbackMessageError"></div>
+</div>
+</div>
+<div class="form-actions feedback-actions">
+<button type="submit" class="btn btn-primary feedback-submit">
+<span class="btn-text">Send Feedback</span>
+<span class="btn-loading">
+<div class="loading-spinner"></div>
+<span>Sending...</span>
+</span>
+<span class="btn-success">
+<span>✓</span>
+<span>Sent!</span>
+</span>
+</button>
+<button type="button" class="btn btn-secondary" data-close>Cancel</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Professional Reservation Form Modal -->
+<div class="modal reservation-modal" id="reservation-contact-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card reservation-card">
+<div class="modal-header reservation-header">
+<div class="header-content">
+<div class="header-icon">📅</div>
+<h3>Reserve Your Table</h3>
+<p>Book your perfect spot for an unforgettable coffee experience</p>
+</div>
+<button class="modal-close" data-close aria-label="Close modal">×</button>
+</div>
+<form id="reservation-contact-form" class="reservation-form" novalidate>
+<div class="form-grid reservation-grid">
+<div class="form-group">
+<label for="reservationName">
+<span class="label-text">Full Name</span>
+<span class="required">*</span>
+</label>
+<input type="text" id="reservationName" name="reservationName" required />
+<div class="error-message" id="reservationNameError"></div>
+</div>
+<div class="form-group">
+<label for="reservationContact">
+<span class="label-text">Contact Number</span>
+<span class="required">*</span>
+</label>
+<input type="tel" id="reservationContact" name="reservationContact" placeholder="+63 912 345 6789" required />
+<div class="error-message" id="reservationContactError"></div>
+</div>
+
+<div class="form-group">
+<label for="reservationDate">
+<span class="label-text">Date</span>
+<span class="required">*</span>
+</label>
+<input type="date" id="reservationDate" name="reservationDate" required />
+<div class="error-message" id="reservationDateError"></div>
+</div>
+<div class="form-group">
+<label for="reservationTime">
+<span class="label-text">Time</span>
+<span class="required">*</span>
+</label>
+<input type="time" id="reservationTime" name="reservationTime" required />
+<div class="error-message" id="reservationTimeError"></div>
+</div>
+<div class="form-group">
+<label for="reservationGuests">
+<span class="label-text">Number of Guests</span>
+<span class="required">*</span>
+</label>
+<select id="reservationGuests" name="reservationGuests" required>
+<option value="" disabled selected>Select number of guests</option>
+<option value="1">1 Guest</option>
+<option value="2">2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4">4 Guests</option>
+<option value="5">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+</select>
+<div class="error-message" id="reservationGuestsError"></div>
+</div>
+<div class="form-group full-width">
+<label for="reservationNotes">
+<span class="label-text">Special Requests</span>
+</label>
+<textarea
+id="reservationNotes"
+name="reservationNotes"
+rows="3"
+maxlength="200"
+placeholder="Any special requests or preferences (optional)..."
+></textarea>
+<div class="message-counter">
+<span class="counter-text">
+<span id="reservationWordCount">0</span> words
+</span>
+<span class="counter-limit">
+<span id="reservationCharCount">0</span>/200 characters
+</span>
+</div>
+</div>
+</div>
+<div class="form-actions reservation-actions">
+<button type="button" class="btn btn-secondary" data-close>Cancel</button>
+<button type="submit" class="btn btn-primary reservation-submit">
+<span class="btn-text">Confirm Reservation</span>
+<span class="btn-loading">
+
+<div class="loading-spinner"></div>
+<span>Processing...</span>
+</span>
+<span class="btn-success">
+<span>✓</span>
+<span>Confirmed!</span>
+</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Reservation Confirmation Popup -->
+<div class="reservation-confirmation-popup" id="reservationConfirmationPopup">
+<div class="popup-content">
+<div class="popup-icon">🎉</div>
+<h3>Reservation Confirmed!</h3>
+<div class="reservation-details" id="reservationDetails">
+<!-- Reservation details will be populated here -->
+</div>
+<p>We've sent a confirmation to your contact number. See you soon!</p>
+<div class="popup-actions">
+<button class="btn btn-primary" onclick="closeReservationConfirmation()">Close</button>
+</div>
+</div>
+</div>
+<!-- Thank You Popup -->
+<div class="thank-you-popup" id="thankYouPopup">
+<div class="popup-content">
+<div class="popup-icon">🎉</div>
+<h3>Thank You!</h3>
+<p>Your feedback has been submitted successfully. We appreciate you taking the time to share your thoughts with us.</p>
+<div class="popup-actions">
+<button class="btn btn-primary" onclick="closeThankYouPopup()">Close</button>
+</div>
+</div>
+</div>
+</body>
+</html>
