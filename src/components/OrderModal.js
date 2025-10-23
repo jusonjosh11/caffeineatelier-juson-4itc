@@ -103,38 +103,33 @@ const OrderModal = ({ isOpen, onClose, selectedCoffee = null }) => {
 
   const handleSubmitOrder = async () => {
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch('http://localhost/4ITC_JUSON/api/submit_order.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          customer_name: orderForm.customer_name,
-          contact: orderForm.contact,
-          coffee_selection: orderForm.coffee_selection,
-          coffee_size: orderForm.coffee_size,
-          addons: orderForm.addons,
-          quantity: orderForm.quantity
-        })
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        console.log('Order submitted successfully:', result);
-        setShowSuccess(true);
-        setTimeout(() => {
-          setShowSuccess(false);
-          onClose();
-        }, 3000);
-      } else {
-        throw new Error(result.error || 'Failed to submit order');
-      }
+      const orderId = 'ord_' + Math.random().toString(36).slice(2, 9);
+      const timestamp = new Date().toISOString();
+      const orderToSave = {
+        id: orderId,
+        timestamp,
+        ...orderForm,
+        total_price: calculateTotalPrice()
+      };
+
+      const existing = localStorage.getItem('orders');
+      const orders = existing ? JSON.parse(existing) : [];
+      orders.push(orderToSave);
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      // notify listeners (OrderDetailsPanel) to refresh immediately
+      window.dispatchEvent(new CustomEvent('orders:updated'));
+
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+      }, 1500);
     } catch (error) {
-      console.error('Error submitting order:', error);
-      alert('Failed to submit order. Please try again.');
+      console.error('Error saving order locally:', error);
+      alert('Failed to save order locally. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

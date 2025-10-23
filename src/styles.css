@@ -146,6 +146,53 @@ body.dark .toast { background: linear-gradient(135deg,#c57b45,#8B4513); }
 
 .theme-toggle { margin-left: 10px; }
 
+/* === Slide-out Order Details Panel === */
+.orders-panel { position: fixed; inset: 0; z-index: 12000; pointer-events: none; }
+.orders-panel.open { pointer-events: auto; }
+.orders-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.38); opacity: 0; transition: opacity .25s ease; }
+.orders-panel.open .orders-backdrop { opacity: 1; }
+.orders-card { position: absolute; top: 0; right: 0; height: 100%; width: min(520px, 92vw); background: #fff; border-left: 3px solid rgba(210,105,30,.18); box-shadow: -30px 0 80px rgba(0,0,0,.25); transform: translateX(100%); transition: transform .35s cubic-bezier(.2,.8,.2,1); display: flex; flex-direction: column; }
+.orders-panel.open .orders-card { transform: translateX(0); }
+.orders-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 2px solid rgba(210,105,30,.15); }
+.orders-title { display: flex; align-items: center; gap: 10px; }
+.orders-title i { color: #D2691E; }
+.orders-title h3 { margin: 0; font-family: 'Playfair Display', serif; }
+.orders-close { width: 40px; height: 40px; border-radius: 50%; border: none; background: #f3f4f6; cursor: pointer; }
+.orders-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 18px; background: linear-gradient(180deg,#fafbfc,#f2f4f7); border-bottom: 1px solid rgba(210,105,30,.12); }
+.summary-item { display: flex; align-items: center; justify-content: space-between; font-weight: 600; color: #6c757d; }
+.summary-item strong { color: #8B4513; }
+.orders-list { flex: 1 1 auto; overflow-y: auto; padding: 16px 18px; display: grid; gap: 14px; background: linear-gradient(180deg, rgba(210,105,30,.05), rgba(210,105,30,.02)); min-height: 240px; }
+.orders-empty { display: grid; place-items: center; text-align: center; color: #6c757d; gap: 10px; padding: 40px 10px; }
+.orders-empty i { color: #D2691E; font-size: 1.5rem; }
+.order-item { background: #fff; border: 2px solid rgba(210,105,30,.2); border-radius: 16px; padding: 14px; box-shadow: 0 14px 32px rgba(139,69,19,.12); overflow:hidden; }
+.order-item::before { content:''; display:block; height:6px; background: linear-gradient(90deg,#D2691E,#8B4513); margin: -12px -12px 12px; }
+.order-item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px dashed rgba(210,105,30,.28); padding-bottom:10px; }
+.order-id { font-weight: 700; color: #8B4513; font-family: 'Playfair Display', serif; }
+.order-time { color: #6c757d; font-size: .9rem; }
+.order-item-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; background: linear-gradient(180deg,#ffffff,#fafbfc); padding:12px; border-radius:12px; border:1px dashed rgba(210,105,30,.28); }
+.order-main { display: grid; gap: 8px; position:relative; }
+.order-main::before { content:'\f0f4'; font-family:'Font Awesome 5 Free'; font-weight:900; color: rgba(210,105,30,.2); position:absolute; right:-8px; top:-4px; font-size:20px; }
+.order-line { display: flex; align-items: center; gap: 10px; }
+.order-line .label { width: 90px; color: #6a6f77; font-size: .95rem; font-weight: 600; }
+.order-line .value { font-weight: 600; color: #2c2c2c; }
+.order-total { font-weight: 800; color: #2c2c2c; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+.orders-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 12px 18px; border-top: 2px solid rgba(210,105,30,.15); background: rgba(255,255,255,.9); }
+
+/* Dark mode */
+body.dark .orders-card { background: #12151b; border-left-color: #2a2f3a; box-shadow: -30px 0 80px rgba(0,0,0,.6); }
+body.dark .orders-header { border-bottom-color: rgba(255,255,255,.06); }
+body.dark .orders-title h3 { color: #eceff4; }
+body.dark .orders-close { background: #1a1f27; color: #e8eaed; }
+body.dark .orders-summary { background: linear-gradient(180deg,#141821,#0f1218); border-bottom-color: rgba(255,255,255,.06); }
+body.dark .summary-item { color: #c0c6d1; }
+body.dark .summary-item strong { color: #f1b37a; }
+body.dark .order-item { background: #141821; border-color: #2a2f3a; box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+body.dark .order-item::before { background: linear-gradient(90deg,#c57b45,#8B4513); }
+body.dark .order-item-body { background: linear-gradient(180deg,#141821,#0f1218); border-color:#2a2f3a; }
+body.dark .order-time, body.dark .order-line .label { color: #c0c6d1; }
+body.dark .order-line .value, body.dark .order-total { color: #eceff4; }
+body.dark .orders-footer { background: #0f1115; border-top-color: #2a2f3a; }
+
 /* Dark mode typography adjustments */
 body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark .section-title, body.dark .hero-title {
   color: #eceff4;
@@ -209,6 +256,7 @@ padding: 1rem 2rem;
 max-width: 1400px;
 margin: 0 auto;
 }
+.nav-actions { display:flex; align-items:center; gap: 10px; }
 .nav-logo {
 display: flex;
 align-items: center;
@@ -545,6 +593,16 @@ border: 2px solid #8B4513;
 backdrop-filter: blur(20px);
 box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
 }
+.btn-cart { background:#fff; color:#8B4513; border:2px solid rgba(210,105,30,.6); box-shadow:0 6px 18px rgba(210,105,30,.18); }
+.btn-cart:hover { background:#8B4513; color:#fff; }
+.btn-cart i { color:#D2691E; }
+.btn-theme { background:linear-gradient(135deg,#f7efe9,#ffe7cf); color:#6a3510; border:2px solid rgba(210,105,30,.45); box-shadow:0 6px 18px rgba(139,69,19,.16); }
+.btn-theme:hover { background:linear-gradient(135deg,#ffe0be,#ffd1a0); color:#6a3510; }
+.theme-toggle { margin-left: 10px; }
+body.dark .btn-cart { background:#141821; color:#f1b37a; border-color:#2a2f3a; }
+body.dark .btn-cart:hover { background:#f1b37a; color:#141821; }
+body.dark .btn-theme { background:linear-gradient(135deg,#151a22,#1c222c); color:#f1b37a; border-color:#2a2f3a; }
+body.dark .btn-theme:hover { background:linear-gradient(135deg,#1b212a,#222936); }
 .btn-secondary:hover {
 background: #8B4513;
 color: white;

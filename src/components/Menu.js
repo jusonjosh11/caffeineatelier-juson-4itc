@@ -29,15 +29,17 @@ const Menu = () => {
   // Force re-render test
   console.log('Menu component rendered, showSuccess:', showSuccess);
 
-  // Fetch menu data from API
+  // Fetch menu data from JSON (no PHP/MySQL required)
   useEffect(() => {
     fetchMenuData();
   }, []);
 
   const fetchMenuData = async () => {
     try {
-      // Use static data for now since API is not set up
-      setMenuData(getStaticMenuData());
+      const response = await fetch('/menu.json');
+      if (!response.ok) throw new Error('Failed to load menu.json');
+      const data = await response.json();
+      setMenuData(data);
     } catch (error) {
       console.error('Error fetching menu:', error);
       setMenuData(getStaticMenuData());
@@ -143,28 +145,28 @@ const Menu = () => {
 
   const handleSubmitOrder = async () => {
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch('/api/submit_order.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderForm)
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        setShowOrderModal(false);
-        setShowSuccess(true);
-        setTimeout(() => setShowSuccess(false), 3000);
-      } else {
-        alert('Error: ' + data.error);
-      }
+      const orderId = 'ord_' + Math.random().toString(36).slice(2, 9);
+      const timestamp = new Date().toISOString();
+      const orderToSave = {
+        id: orderId,
+        timestamp,
+        ...orderForm,
+        total_price: calculateTotalPrice()
+      };
+
+      const existing = localStorage.getItem('orders');
+      const orders = existing ? JSON.parse(existing) : [];
+      orders.push(orderToSave);
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      setShowOrderModal(false);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
     } catch (error) {
-      console.error('Error submitting order:', error);
-      alert('Failed to submit order. Please try again.');
+      console.error('Error saving order:', error);
+      alert('Failed to save order locally. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import OrderModal from './OrderModal';
+import OrderDetailsPanel from './OrderDetailsPanel';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ const Header = () => {
   const toggleTheme = () => setIsDark(v => !v);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showOrderModal, setShowOrderModal] = useState(false);
+  const [showOrdersPanel, setShowOrdersPanel] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -89,21 +91,33 @@ const Header = () => {
           </li>
         </ul>
         
-        <button 
-          className="btn btn-primary nav-order" 
-          onClick={() => setShowOrderModal(true)}
-        >
-          Order Now
-        </button>
+        <div className="nav-actions">
+          <button 
+            className="btn btn-primary nav-order" 
+            onClick={() => setShowOrderModal(true)}
+          >
+            Order Now
+          </button>
 
-        <button
-          className={`btn btn-secondary theme-toggle`}
-          onClick={toggleTheme}
-          aria-pressed={isDark}
-          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {isDark ? 'Light' : 'Dark'} Mode
-        </button>
+          <button
+            className="btn btn-cart"
+            onClick={() => setShowOrdersPanel(true)}
+            title="View order details"
+            aria-label="Open order details"
+          >
+            <i className="fas fa-shopping-bag"></i>
+            Order Details
+          </button>
+
+          <button
+            className={`btn btn-theme theme-toggle`}
+            onClick={toggleTheme}
+            aria-pressed={isDark}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? 'Light' : 'Dark'} Mode
+          </button>
+        </div>
         
         <div className="nav-toggle" id="nav-toggle" onClick={toggleMenu}>
           <span></span>
@@ -116,6 +130,7 @@ const Header = () => {
         isOpen={showOrderModal} 
         onClose={() => setShowOrderModal(false)} 
       />
+      <OrderDetailsPanel isOpen={showOrdersPanel} onClose={() => setShowOrdersPanel(false)} />
     </nav>
   );
 };
